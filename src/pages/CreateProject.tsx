@@ -1,6 +1,5 @@
 import { logKpiEvent } from '@/lib/utils';
 import React, { useState } from 'react'
-import Navigation from '@/components/Navigation'
 import { useNavigate } from 'react-router-dom'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -514,9 +513,7 @@ Be specific and actionable for recruiters.`,
   }
 
   return (
-    <div className="min-h-screen bg-[#fff9f5]">
-
-      <div className="max-w-2xl mx-auto space-y-6 p-6">
+    <div className="max-w-2xl mx-auto space-y-6 p-6">
         <div>
           <h1 className="text-3xl font-bold text-[#2e2e2e] font-['DM_Sans']">Create New Project</h1>
           <p className="text-gray-600">Start a new hiring project with AI-powered insights</p>
@@ -730,6 +727,5 @@ Be specific and actionable for recruiters.`,
           </Button>
         </div>
       </div>
-    </div>
   )
 }
