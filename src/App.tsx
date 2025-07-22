@@ -49,31 +49,38 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen bg-cream">
-        <RecruiterPortalLayout>
-          <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/login" element={<Login />} />
-            {user ? (
-              <>
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/create-project" element={<CreateProject />} />
-                <Route path="/create-candidate" element={<CreateCandidate />} />
-                <Route path="/candidates/new" element={<CreateCandidate />} />
-                <Route path="/project/:id" element={<ProjectWorkspace />} />
-                <Route path="/candidate/:id" element={<CandidateProfilePage />} />
-                <Route path="/upload" element={<UploadRecording />} />
-                <Route path="/market-insights" element={<MarketInsights />} />
-                <Route path="/candidates" element={<Candidates />} />
-                <Route path="/settings" element={<Settings />} />
-                <Route path="/kpi" element={<PersonalKPI />} />
-                <Route path="/calendar" element={<CalendarPage />} />
-              </>
-            ) : (
-              <Route path="*" element={<Login />} />
-            )}
-          </Routes>
-          <Toaster />
-        </RecruiterPortalLayout>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/login" element={<Login />} />
+
+          <Route
+            path="/*"
+            element={
+              user ? (
+                <RecruiterPortalLayout>
+                  <Routes>
+                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/create-project" element={<CreateProject />} />
+                    <Route path="/create-candidate" element={<CreateCandidate />} />
+                    <Route path="/candidates/new" element={<CreateCandidate />} />
+                    <Route path="/project/:id" element={<ProjectWorkspace />} />
+                    <Route path="/candidate/:id" element={<CandidateProfilePage />} />
+                    <Route path="/upload" element={<UploadRecording />} />
+                    <Route path="/market-insights" element={<MarketInsights />} />
+                    <Route path="/candidates" element={<Candidates />} />
+                    <Route path="/settings" element={<Settings />} />
+                    <Route path="/kpi" element={<PersonalKPI />} />
+                    <Route path="/calendar" element={<CalendarPage />} />
+                    <Route index element={<Dashboard />} />
+                  </Routes>
+                </RecruiterPortalLayout>
+              ) : (
+                <Login />
+              )
+            }
+          />
+        </Routes>
+        <Toaster />
       </div>
     </Router>
   )
