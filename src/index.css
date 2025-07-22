@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%; /* #fafafa */
+    --foreground: 0 0% 18%; /* #2e2e2e */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 18%;
+    --primary: 24 95% 53%; /* #F97316 */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 43 96% 56%; /* #FBBF24 */
+    --secondary-foreground: 0 0% 18%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 84% 60%; /* Use a less dominant red */
+    --accent-foreground: 0 0% 98%;
+    --tertiary: 56 100% 85%; /* #fff3b0 */
+    --tertiary-foreground: 0 0% 18%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 90%;
+    --input: 0 0% 92%;
+    --ring: 24 95% 53%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+
+    font-family: Inter, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'DM Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Card styles */
+  .card-gradient {
+    background: linear-gradient(135deg, #fff 0%, #fefefe 100%);
+  }
+  
+  .card-hover {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-2px);
+  }
+  
+  .minimal-shadow {
+    box-shadow: 0 2px 8px rgb(0 0 0 / 5%);
+  }
+  
+  /* Clean flat backgrounds */
+  .flat-white-bg {
+    background: #fff;
+  }
+  
+  .flat-neutral-bg {
+    background: #f7f7f7;
+  }
+  
+  /* Hero gradient */
+  .hero-gradient {
+    background: linear-gradient(135deg, #fff9f5 0%, #ffecd1 100%);
+  }
+  
+  /* Section dividers with brand colors */
+  .section-divider {
+    background: linear-gradient(90deg, transparent 0%, #F97316 30%, #FBBF24 70%, transparent 100%);
+    height: 2px;
+    opacity: 15%;
+  }
+  
+  /* Brand color utilities */
+  .text-primary {
+    color: #F97316;
+  }
+  
+  .text-secondary {
+    color: #FBBF24;
+  }
+  
+  .border-primary {
+    border-color: #F97316;
+  }
+  
+  .border-secondary {
+    border-color: #FBBF24;
+  }
+  
+  .bg-primary {
+    background-color: #F97316;
+  }
+  
+  .bg-secondary {
+    background-color: #FBBF24;
+  }
+  
+  /* Google Calendar-inspired styles */
+  .soft-calendar .rbc-calendar {
+    font-family: Inter, sans-serif;
+    background: #fff;
+    border-radius: 12px;
+  }
+  
+  .soft-calendar .rbc-header {
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    padding: 12px 8px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #495057;
+  }
+  
+  .soft-calendar .rbc-month-view {
+    border: none;
+  }
+  
+  .soft-calendar .rbc-date-cell {
+    padding: 8px;
+    border-right: 1px solid #f1f3f4;
+  }
+  
+  .soft-calendar .rbc-date-cell:last-child {
+    border-right: none;
+  }
+  
+  .soft-calendar .rbc-day-bg {
+    border-top: 1px solid #f1f3f4;
+    border-right: 1px solid #f1f3f4;
+  }
+  
+  .soft-calendar .rbc-day-bg:last-child {
+    border-right: none;
+  }
+  
+  .soft-calendar .rbc-today {
+    background-color: #fff3e0;
+  }
+  
+  .soft-calendar .rbc-off-range-bg {
+    background-color: #fafafa;
+  }
+  
+  .soft-calendar .rbc-event {
+    background-color: #FFA552;
+    border: none;
+    border-radius: 6px;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .soft-calendar .rbc-event:hover {
+    background-color: #E6944A;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgb(255 165 82 / 30%);
+  }
+  
+  .soft-calendar .rbc-event-label {
+    font-size: 11px;
+    font-weight: 400;
+  }
+  
+  .soft-calendar .rbc-show-more {
+    background-color: transparent;
+    color: #FFA552;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 4px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+  
+  .soft-calendar .rbc-show-more:hover {
+    background-color: #fff3e0;
+  }
+  
+  .soft-calendar .rbc-toolbar {
+    margin-bottom: 20px;
+    padding: 0 8px;
+  }
+  
+  .soft-calendar .rbc-toolbar button {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #495057;
+    transition: all 0.2s ease;
+  }
+  
+  .soft-calendar .rbc-date-cell button {
+    font-size: 14px;
+    font-weight: 500;
+    color: #495057;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+  
+  .soft-calendar .rbc-date-cell button:hover {
+    background-color: #fff3e0;
+    color: #FFA552;
+  }
+  
+  .soft-calendar .rbc-toolbar button:hover {
+    background: #f8f9fa;
+    border-color: #FFA552;
+    color: #FFA552;
+  }
+  
+  .soft-calendar .rbc-toolbar button.rbc-active {
+    background: #FFA552;
+    border-color: #FFA552;
+    color: white;
+  }
+  
+  .soft-calendar .rbc-toolbar-label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2e2e2e;
+    margin: 0 16px;
+  }
+  
+  .soft-calendar .rbc-month-row {
+    border-bottom: 1px solid #f1f3f4;
+  }
+  
+  .soft-calendar .rbc-month-row:last-child {
+    border-bottom: none;
+  }
+  
+  .soft-calendar .rbc-today .rbc-button-link {
+    background-color: #FFA552;
+    color: white;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .calendar-container {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+}
